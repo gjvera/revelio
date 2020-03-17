@@ -45,6 +45,11 @@ const AddVisualization = () => {
       title: '2D Map',
       componentName: '2d-map',
     },
+    '3D Map': {
+      type: 'component',
+      title: '3D Map',
+      componentName: '3D-map',
+    },
     Table: {
       type: 'component',
       title: 'Table',
