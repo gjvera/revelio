@@ -6317,12 +6317,12 @@ ccount@^1.0.0:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/ccount/-/ccount-1.0.4.tgz#9cf2de494ca84060a2a8d2854edd6dfb0445f386"
 
-cesium@1.44:
-  version "1.44.0"
-  resolved "https://registry.yarnpkg.com/cesium/-/cesium-1.44.0.tgz#1f56c056e38edeae781ac6fd2b2994162ae953d8"
-  integrity sha512-C9Tv0PivQHIQwZntcIsa4s6Z71sOxRbt8NyeZHCXozCt2oAexci4PbXc2QY8aZzyk8P+m/CNfdQsOgsK0Pd+Yg==
+cesium@^1.44.0:
+  version "1.67.0"
+  resolved "https://registry.yarnpkg.com/cesium/-/cesium-1.67.0.tgz#da12638513f3a0678e2b52466cd65330e339e2f2"
+  integrity sha512-vu/InLNtw1pV2FavfAB1c/BQGogg7LAx5GPu2hnGlSoSfb+hUyCh0YlW0kKyL/appAYgt1OtMCRaND2S7RqygQ==
   dependencies:
-    requirejs "^2.3.2"
+    esm "^3.2.25"
 
 chai@4.2.0:
   version "4.2.0"
@@ -8162,6 +8162,11 @@ eslint@4.19.1:
     strip-json-comments "~2.0.1"
     table "4.0.2"
     text-table "~0.2.0"
+
+esm@^3.2.25:
+  version "3.2.25"
+  resolved "https://registry.yarnpkg.com/esm/-/esm-3.2.25.tgz#342c18c29d56157688ba5ce31f8431fbb795cc10"
+  integrity sha512-U1suiZ2oDVWv4zPO56S0NcR5QriEahGtdN2OR6FiOG4WJvcjBVFB0qI4+eKoWFH483PKGuLuu6V8Z4T5g63UVA==
 
 espree@^3.5.4:
   version "3.5.4"
@@ -11712,6 +11717,11 @@ obuf@^1.0.0, obuf@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/obuf/-/obuf-1.1.2.tgz#09bea3343d41859ebd446292d11c9d4db619084e"
 
+ol-cesium@^2.10.0:
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/ol-cesium/-/ol-cesium-2.10.0.tgz#c2960dd836fc2a77fe12e82d8c5c0859a2fd060b"
+  integrity sha512-IGdnfw85TXF5Ju/Ng3xC40CzZLnvf/nHLCK/FgZKE7GkctwU3OEKLrKZ3cYELTWoiD30yVXynTiqTibuHtTNRg==
+
 ol@^6.0.1:
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/ol/-/ol-6.1.1.tgz#7f8ada284344a5872d552205de558ed4a904cd27"
@@ -13741,11 +13751,6 @@ require-uncached@^1.0.3:
   dependencies:
     caller-path "^0.1.0"
     resolve-from "^1.0.0"
-
-requirejs@^2.3.2:
-  version "2.3.6"
-  resolved "https://registry.yarnpkg.com/requirejs/-/requirejs-2.3.6.tgz#e5093d9601c2829251258c0b9445d4d19fa9e7c9"
-  integrity sha512-ipEzlWQe6RK3jkzikgCupiTbTvm4S0/CAU5GlgptkN5SO6F3u0UD0K18wy6ErDqiCyP4J4YYe1HuAShvsxePLg==
 
 requires-port@^1.0.0:
   version "1.0.0"

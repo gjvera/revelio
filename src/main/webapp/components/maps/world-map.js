@@ -6,6 +6,7 @@ import React, {
   memo,
 } from 'react'
 import OpenLayersMap from 'ol/Map'
+import Map from './map-singleton'
 import View from 'ol/View'
 import Tile from 'ol/layer/Tile'
 import OSM from 'ol/source/OSM'
@@ -15,7 +16,10 @@ import { combineExtents } from 'geospatialdraw/bin/geometry/utilities'
 import { LAT_LON } from 'geospatialdraw/bin/coordinates/units'
 import { useCursorPosition } from './effects'
 import CoordinateValue from '../location/coordinate-value'
-
+import Cesium from 'cesium/Build/Cesium/Cesium'
+require('cesium/Source/Widgets/widgets.css')
+import OLCesium from 'ol-cesium'
+window.Cesium = Cesium
 export const geometryListToViewport = geometryList =>
   geometryList.length > 0
     ? combineExtents(geometryList.map(geometry => geometry.bbox))
@@ -45,22 +49,19 @@ const WorldMap = ({
   useEffect(
     () => {
       if (mapDiv.current && !mapControls) {
-        const map = new OpenLayersMap({
-          layers: [
-            new Tile({
-              source: new OSM(),
-            }),
-          ],
-          target: mapDiv.current,
-          view: new View({
+        Map.setTarget(mapDiv.current)
+        Map.setView(
+          new View({
             center: [0, 0],
             rotation: 0,
             zoom,
             minZoom,
             maxZoom,
             projection,
-          }),
-        })
+          })
+        )
+        const map = new OLCesium({ map: Map }) // map is the ol.Map instance
+        map.setEnabled(true)
         mapDiv.current
           .querySelectorAll(
             '.ol-overlaycontainer-stopevent, .ol-overlaycontainer'

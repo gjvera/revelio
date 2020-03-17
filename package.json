@@ -95,6 +95,7 @@
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.16",
     "ol": "^6.0.1",
+    "olcs": "^2.10.1",
     "on-finished": "^2.3.0",
     "polished": "^3.4.1",
     "qs": "^6.9.1",
@@ -112,8 +113,9 @@
     "winston": "^3.2.1"
   },
   "dependencies": {
-    "cesium": "1.44",
+    "cesium": "^1.44.0",
     "geospatialdraw": "0.5.7",
+    "ol-cesium": "^2.10.0",
     "olcs": "^2.10.0"
   },
   "scripts": {
