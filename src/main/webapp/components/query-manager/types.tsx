@@ -7,13 +7,21 @@ type Overwrite<T, U> = Pick<T, Exclude<keyof T, keyof U>> & U
 export type QueryCardProps = {
   QueryEditor: React.FunctionComponent<EditorProps>
   query?: QueryType
-  onSearch: (query: QueryType) => void
+  onSearch: () => void
   onChange: (query: QueryType) => void
 }
-export type QuerySelectorProps = QueryCardProps & {
+export type QuerySelectorProps = Overwrite<
+  QueryCardProps,
+  { onSearch: (id: string) => void }
+> & {
   queries: QueryType[]
   currentQuery: string
 }
+
+export type AddQueryProps = QuerySelectorProps & {
+  onCreate: (query: QueryType) => void
+}
+
 export type QueryEditorPopoverProps = QueryCardProps & {
   anchorEl: HTMLDivElement
   onClose: () => void
@@ -22,10 +30,6 @@ export type QueryEditorPopoverProps = QueryCardProps & {
 export type QueryManagerProps = Overwrite<
   QuerySelectorProps,
   { onChange: (queries: QueryType[]) => void }
->
-
-export type AddQueryProps = {
-  QueryEditor: React.FunctionComponent<EditorProps>
-  onSearch: (query: QueryType) => void
-  hasQueries: boolean
+> & {
+  onCreate: (query: QueryType) => void
 }
